@@ -9,7 +9,14 @@ namespace IMCBA
     {
         public static void Main()
         {
-            Console.WriteLine(RandomInteger(1, 15675));
+            var minNumber = 1;
+            var maxNumber = 3;
+            var totalOfNumbers = 35;
+
+            for (int i = 1; i <= totalOfNumbers; i++)
+            {
+                Console.WriteLine(i + ">>" + RandomInteger(minNumber, maxNumber));
+            }
         }
 
         // Return a random integer between a min and max value.
@@ -30,7 +37,7 @@ namespace IMCBA
             }
 
             // Add min to the scaled difference between max and min.
-            return (int)(min + (max - min) *
+            return (int)(min + ((max + 1) - min) *
                 (scale / (double)uint.MaxValue));
         }
     }
